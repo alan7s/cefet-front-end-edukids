@@ -25,7 +25,7 @@
  */
 .com-fome {
   position : relative;
-  animation: piscando .5s ease-in-out 0s infinite alternate;
+  animation: piscando .5s ease-in-out 0s infinite alternate, efeito-3d .5s ease-in-out 0s infinite alternate;
 }
 
 .satisfeito {
@@ -44,6 +44,10 @@
   border   : 3px solid red;
   position : relative;
   animation: flutuando .5s ease-in-out 0s infinite alternate, pulsando .5s ease-in-out 0s infinite alternate;
+}
+
+.efeito-3d {
+  perspective: 2000px;
 }
 
 @keyframes piscando {
@@ -86,5 +90,15 @@
 
   to {
     transform: scale(1.1);
+  }
+}
+
+@keyframes efeito-3d {
+  from {
+    transform: rotateY(30deg);
+  }
+
+  to {
+    transform: rotate(-30deg);
   }
 }
