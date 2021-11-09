@@ -1,7 +1,7 @@
 #controles ul {
   list-style-type: none;
-  padding: 0;
-  transform: translateX(-80%);
+  padding        : 0;
+  transform      : translateX(-80%);
 }
 
 #controles ul:hover {
@@ -11,9 +11,9 @@
 /* Exercício 1: Criar uma transição para quando o mouse estiver em cima dos
  * botões play/stop (para que o elemento se revele lentamente)
  */
- #controles ul {
+#controles ul {
   transition: all 2s ease-out;
- }
+}
 
 /*
  * Exercício 2: Você deve implementar uma metáfora visual para cada um dos 4
@@ -24,17 +24,67 @@
  *   - atacando: animal dá um salto e cresce, com uma borda vermelha
  */
 .com-fome {
-
+  position : relative;
+  animation: piscando .5s ease-in-out 0s infinite alternate;
 }
 
 .satisfeito {
-
+  border   : 3px solid green;
+  position : relative;
+  animation: girando .5s ease-in-out 0s infinite alternate;
 }
 
 .com-raiva {
-
+  border   : 3px solid orange;
+  position : relative;
+  animation: pulsando .5s ease-in-out 0s infinite alternate;
 }
 
 .atacando {
+  border   : 3px solid red;
+  position : relative;
+  animation: flutuando .5s ease-in-out 0s infinite alternate, pulsando .5s ease-in-out 0s infinite alternate;
+}
 
+@keyframes piscando {
+  from {
+    opacity: 1.0;
+  }
+
+  /* usa apenas     */
+  to {
+    opacity: 0.5;
+  }
+
+  /* 'from' e 'to'  */
+}
+
+@keyframes girando {
+  from {
+    transform: rotate(90deg);
+  }
+
+  to {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes flutuando {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -30px;
+  }
+}
+
+@keyframes pulsando {
+  from {
+    transform: scale(1.0);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
 }
